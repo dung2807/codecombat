@@ -248,7 +248,7 @@ module.exports = class LevelLoadingView extends CocoView
     @$loadingDetails.css transition: 'none'
     @resize()
 
-  onSubscriptionRequired: (e) ->
+  onSubscriptionRequired: (e) -> 
     @$el.find('.level-loading-goals, .tip, .progress-or-start-container').hide()
     @$el.find('.subscription-required').show()
 

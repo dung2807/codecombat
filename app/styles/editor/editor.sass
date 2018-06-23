@@ -8,8 +8,8 @@
   right: 0px
   bottom: 0px
 
-  $BG: rgba(228, 207, 140, 1.0)
-  $NAVBG: #2f261d
+  $BG: rgba(0, 0, 140, 1.0)
+  $NAVBG: #0000ff
   
   .dropdown-menu
     position: absolute
@@ -39,10 +39,12 @@
     padding: 7px 8px 8px
     cursor: pointer
     &:hover
+      color: #ffffff
       background-color: lighten($NAVBG, 10%)
   .navbar
     min-height: 0px
     border-radius: 0
+    background-color: $NAVBG
   .navbar-right
     // not sure why bootstrap puts a big negative margin in, but this overrides it
     margin-right: 10px !important
@@ -61,6 +63,7 @@
     border-left: 2px solid lighten($NAVBG, 20%)
     border-right: 2px solid lighten($NAVBG, 20%)
     background: lighten($NAVBG, 10%)
+    color: #ffffff
     margin-left: 20px
     float: left
   .nav-tabs
@@ -97,6 +100,7 @@
     
     .active > a, .active > a:hover, .active > a:focus
       background-color: $BG !important
+      color: darken($BG, 50%) !important
       border-color: darken($BG, 50%)
       border-bottom: 0
     a

@@ -110,6 +110,9 @@ module.exports = class CocoRouter extends Backbone.Router
     'docs/components': go('editor/docs/ComponentsDocumentationView')
     'docs/systems': go('editor/docs/SystemsDocumentationView')
 
+    'demo/level': go('editor/level/LevelSearchView')
+    'demo/level/:levelID': go('editor/level/LevelEditView')
+
     'editor': go('CommunityView')
 
     'editor/achievement': go('editor/achievement/AchievementSearchView')
@@ -130,6 +133,27 @@ module.exports = class CocoRouter extends Backbone.Router
     'editor/i18n-verifier': go('editor/verifier/i18nVerifierView')
     'editor/course': go('editor/course/CourseSearchView')
     'editor/course/:courseID': go('editor/course/CourseEditView')
+
+    # 'editor2': go('CommunityView')
+
+    # 'editor2/achievement': go('editor2/achievement/AchievementSearchView')
+    # 'editor2/achievement/:articleID': go('editor2/achievement/AchievementEditView')
+    # 'editor2/article': go('editor2/article/ArticleSearchView')
+    # 'editor2/article/preview': go('editor2/article/ArticlePreviewView')
+    # 'editor2/article/:articleID': go('editor2/article/ArticleEditView')
+    # 'editor2/level': go('editor2/level/LevelSearchView')
+    # 'editor2/level/:levelID': go('editor2/level/LevelEditView')
+    # 'editor2/thang': go('editor2/thang/ThangTypeSearchView')
+    # 'editor2/thang/:thangID': go('editor2/thang/ThangTypeEditView')
+    # 'editor2/campaign/:campaignID': go('editor2/campaign/CampaignEditorView')
+    # 'editor2/poll': go('editor2/poll/PollSearchView')
+    # 'editor2/poll/:articleID': go('editor2/poll/PollEditView')
+    # 'editor2/verifier': go('editor2/verifier/VerifierView')
+    # 'editor2/verifier/:levelID': go('editor2/verifier/VerifierView')
+    # 'editor2/i18n-verifier/:levelID': go('editor2/verifier/i18nVerifierView')
+    # 'editor2/i18n-verifier': go('editor2/verifier/i18nVerifierView')
+    # 'editor2/course': go('editor2/course/CourseSearchView')
+    # 'editor2/course/:courseID': go('editor2/course/CourseEditView')
 
     'etc': redirect('/teachers/demo')
 

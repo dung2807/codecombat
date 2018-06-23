@@ -34,7 +34,7 @@ module.exports = class ForkModal extends ModalView
     newModel.set 'name', @$el.find('#fork-model-name').val()
     if @model.schema().properties.permissions
       newModel.set 'permissions', [access: 'owner', target: me.id]
-    newPathPrefix = "editor/#{@editorPath}/"
+    newPathPrefix = "demo/#{@editorPath}/"
     res = newModel.save(null, {type: 'POST'})  # Override PUT so we can trigger postFirstVersion logic
     return unless res
     res.error =>

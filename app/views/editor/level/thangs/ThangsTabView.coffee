@@ -52,7 +52,7 @@ module.exports = class ThangsTabView extends CocoView
     'click #duplicate': 'onDuplicateClicked'
     'click #thangs-container-toggle': 'toggleThangsContainer'
     'click #thangs-palette-toggle': 'toggleThangsPalette'
-#    'click .add-thang-palette-icon': 'toggleThangsPalette'
+    'click .add-thang-palette-icon': 'toggleThangsPalette'
     'click #rotation-menu-item button': 'onClickRotationButton'
     'click [data-toggle="coco-modal"][data-target="editor/level/modals/GenerateTerrainModal"]': 'openGenerateTerrainModal'
 
@@ -360,10 +360,10 @@ module.exports = class ThangsTabView extends CocoView
       clickedSprite = _.find(selected, {sprite: e.sprite})
       @gameUIState.set('selected', _.without(selected, clickedSprite))
 
-  onSpriteDoubleClicked: (e) ->
-    return if @dragged > 10
-    return unless e.thang
-    @editThang thangID: e.thang.id
+  onSpriteDoubleClicked: (e) -> ''
+    # return if @dragged > 10
+    # return unless e.thang
+    # @editThang thangID: e.thang.id
 
   onRandomTerrainGenerated: (e) ->
     @thangsBatch = []
@@ -852,5 +852,5 @@ class ThangNode extends TreemaObjectNode
     if thangType
       valEl.prepend($("<img class='img-circle' src='#{thangType.getPortraitURL()}' />"))
 
-  onEnterPressed: ->
+  onEnterPressed: -> 
     Backbone.Mediator.publish 'editor:edit-level-thang', thangID: @getData().id

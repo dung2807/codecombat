@@ -400,14 +400,15 @@ UserSchema.methods.sendWelcomeEmail = co.wrap (req) ->
     log.error JSON.stringify(msg, null, 2)
 
 UserSchema.methods.hasSubscription = ->
-  if payPal = @get('payPal')
-    return true if payPal.billingAgreementID
-  if stripeObject = @get('stripe')
-    return true if stripeObject.sponsorID
-    return true if stripeObject.subscriptionID
-    return true if stripeObject.free is true
-    return true if _.isString(stripeObject.free) and new Date() < new Date(stripeObject.free)
-  false
+  true
+  # if payPal = @get('payPal')
+  #   return true if payPal.billingAgreementID
+  # if stripeObject = @get('stripe')
+  #   return true if stripeObject.sponsorID
+  #   return true if stripeObject.subscriptionID
+  #   return true if stripeObject.free is true
+  #   return true if _.isString(stripeObject.free) and new Date() < new Date(stripeObject.free)
+  # false
 
 
 UserSchema.methods.isPremium = ->

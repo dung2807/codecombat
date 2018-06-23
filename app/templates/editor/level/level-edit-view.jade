@@ -6,14 +6,14 @@ block header
       .container-fluid
         ul.nav.navbar-nav
           li
-            a(href="/editor/level")
+            a(href="/demo/level")
               span.glyphicon-home.glyphicon
 
   else
     nav.navbar.navbar-default(role='navigation')#level-editor-top-nav
       ul.nav.navbar-nav
         li
-          a(href="/editor/level")
+          a(href="/demo/level")
             span.glyphicon-home.glyphicon
 
       ul.nav.navbar-nav.nav-tabs
@@ -48,20 +48,26 @@ block header
           span#completion-rate.spl
 
       ul.nav.navbar-nav.navbar-right
-        li#undo-button
+        li#thangs-container-toggle
+          a
+            span.glyphicon-th-list.glyphicon
+        li#thangs-palette-toggle
+          a
+            span.glyphicon-plus.glyphicon
+        //- li#undo-button
           a
             span.glyphicon-arrow-left.glyphicon
-        li#redo-button
+        //- li#redo-button
             a
               span.glyphicon-arrow-right.glyphicon
-        li#artisan-guide-button
+        //- li#artisan-guide-button
           a
             span.glyphicon-book.glyphicon
         if authorized
           li#commit-level-start-button
             a
               span.glyphicon-floppy-disk.glyphicon
-        else
+        //- else
           li#level-patch-button
             a
               span.glyphicon-floppy-disk.glyphicon
@@ -86,8 +92,8 @@ block header
           a(data-toggle='dropdown')
             span.glyphicon-chevron-down.glyphicon
           ul.dropdown-menu
-            li.dropdown-header(data-i18n="common.actions") Actions
-            li
+            //- li.dropdown-header(data-i18n="common.actions") Actions
+            //- li
               a#level-watch-button
                 span.watch
                   span.glyphicon.glyphicon-eye-open
@@ -97,8 +103,9 @@ block header
                   span.spl(data-i18n="common.unwatch") Unwatch
 
             li(class=anonymous ? "disabled": "")
-              a(data-i18n="common.fork")#fork-start-button Fork
-            if me.isAdmin() || me.isArtisan()
+              //- a(data-i18n="common.fork")#fork-start-button Fork
+              a#fork-start-button Create new level from this level
+            //- if me.isAdmin() || me.isArtisan()
               // DNT
               li
                 a#save-branch Save/Stash Branch
@@ -108,31 +115,31 @@ block header
               a(data-toggle="coco-modal", data-target="modal/RevertModal", data-i18n="editor.revert", disabled=anonymous)#revert-button Revert
             li(class=anonymous ? "disabled": "")
               a(data-toggle="coco-modal", data-target="editor/level/modals/GenerateTerrainModal", data-i18n="editor.generate_terrain", disabled=anonymous).generate-terrain-button Generate Terrain
-            li(class=anonymous ? "disabled": "")
+            //- li(class=anonymous ? "disabled": "")
               a(data-i18n="editor.pop_i18n")#pop-level-i18n-button Populate i18n
-            if view.courseID
+            //- if view.courseID
               li(class=anonymous ? "disabled": "")
                 a.play-classroom-level(data-classroom='classroom', data-code-language="javascript") Play Classroom JavaScript
               li(class=anonymous ? "disabled": "")
                 a.play-classroom-level(data-classroom='classroom', data-code-language="python") Play Classroom Python
               li(class=anonymous ? "disabled": "")
                 a.play-classroom-level(data-classroom='home', data-code-language="") Play Home
-            if me.isAdmin()
+            //- if me.isAdmin()
               li
                 a(href="/editor/verifier/#{level.get('slug')}?dev=true") Verifier
-            li.divider
-            li.dropdown-header(data-i18n="common.info") Info
-            li#level-history-button
+            //- li.divider
+            //- li.dropdown-header(data-i18n="common.info") Info
+            //- li#level-history-button
               a(href='#', data-i18n="general.version_history") Version History
-            li.divider
-            li.dropdown-header(data-i18n="common.help") Help
-            li
+            //- li.divider
+            //- li.dropdown-header(data-i18n="common.help") Help
+            //- li
               a(href='https://github.com/codecombat/codecombat/wiki/Artisan-Home', data-i18n="editor.wiki", target="_blank") Wiki
-            li
+            //- li
               a(href='https://coco-slack-invite.herokuapp.com/', data-i18n="editor.live_chat", target="_blank") Live Chat
-            li
+            //- li
               a(href='http://discourse.codecombat.com/category/artisan', data-i18n="nav.forum", target="_blank") Forum
-            if !me.isStudent()
+            //- if !me.isStudent()
               li
                 a.contact-modal(data-i18n="nav.contact")
 

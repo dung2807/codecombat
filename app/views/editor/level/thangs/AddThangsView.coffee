@@ -13,7 +13,7 @@ class ThangTypeSearchCollection extends CocoCollection
 
 module.exports = class AddThangsView extends CocoView
   id: 'add-thangs-view'
-  className: 'add-thangs-palette'
+  className: 'add-thangs-palette hide'
   template: add_thangs_template
 
   events:

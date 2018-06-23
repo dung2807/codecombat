@@ -58,6 +58,8 @@ module.exports = class LevelEditView extends RootView
   cache: false
 
   events:
+    'click #thangs-container-toggle': 'toggleThangsContainer'
+    'click #thangs-palette-toggle': 'toggleThangsPalette'
     'click #play-button': 'onPlayLevel'
     'click .play-with-team-button': 'onPlayLevel'
     'click .play-with-team-parent': 'onPlayLevelTeamSelect'
@@ -203,6 +205,12 @@ module.exports = class LevelEditView extends RootView
 
   onRedo: ->
     TreemaNode.getLastTreemaWithFocus()?.redo()
+
+  toggleThangsContainer: (e) ->
+    $('#all-thangs').toggleClass('hide')
+
+  toggleThangsPalette: (e) ->
+    $('#add-thangs-view').toggleClass('hide')
 
   showUndoDescription: ->
     undoDescription = TreemaNode.getLastTreemaWithFocus().getUndoDescription()
