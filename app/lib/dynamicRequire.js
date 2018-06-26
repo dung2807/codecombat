@@ -62,6 +62,7 @@ module.exports = {
   'views/editor/level/LevelEditView': function () { return import(/* webpackChunkName: "editor" */ 'views/editor/level/LevelEditView') },
   'views/editor/thang/ThangTypeSearchView': function () { return import(/* webpackChunkName: "editor" */ 'views/editor/thang/ThangTypeSearchView') },
   'views/editor/thang/ThangTypeEditView': function () { return import(/* webpackChunkName: "editor" */ 'views/editor/thang/ThangTypeEditView') },
+  'views/editor/campaign/CampaignSearchView': function () { return import(/* webpackChunkName: "editor" */ 'views/editor/campaign/CampaignSearchView') },
   'views/editor/campaign/CampaignEditorView': function () { return import(/* webpackChunkName: "editor" */ 'views/editor/campaign/CampaignEditorView') },
   'views/editor/poll/PollSearchView': function () { return import(/* webpackChunkName: "editor" */ 'views/editor/poll/PollSearchView') },
   'views/editor/poll/PollEditView': function () { return import(/* webpackChunkName: "editor" */ 'views/editor/poll/PollEditView') },
