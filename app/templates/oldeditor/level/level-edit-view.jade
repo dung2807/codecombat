@@ -6,69 +6,62 @@ block header
       .container-fluid
         ul.nav.navbar-nav
           li
-            a(href="/demo/level")
+            a(href="oldeditor/level")
               span.glyphicon-home.glyphicon
 
   else
     nav.navbar.navbar-default(role='navigation')#level-editor-top-nav
       ul.nav.navbar-nav
         li
-          a(href="/demo/level")
+          a(href="oldeditor/level")
             span.glyphicon-home.glyphicon
-
-      .navbar-header
-        span.navbar-brand
-          | #{level.attributes.name}
-          span#completion-rate.spl
 
       ul.nav.navbar-nav.nav-tabs
         li.active
           a(href="#thangs-tab-view", data-toggle="tab", data-i18n="editor.level_tab_thangs") Thangs
-        //- li
+        li
           a(href="#editor-level-scripts-tab-view", data-toggle="tab", data-i18n="editor.level_tab_scripts") Scripts
-        //- li
+        li
           a(href="#editor-level-settings-tab-view", data-toggle="tab", data-i18n="play.settings") Settings
-        //- li
+        li
           a(href="#editor-level-components-tab-view", data-toggle="tab", data-i18n="editor.level_tab_components")#components-tab Components
-        //- li
+        li
           a(href="#systems-tab-view", data-toggle="tab", data-i18n="editor.level_tab_systems") Systems
-        //- li
+        li
           a(href="#editor-level-tasks-tab-view", data-toggle="tab", data-i18n="editor.level_tab_tasks")#tasks-tab= "Tasks" + " " + view.getTaskCompletionRatio()
-        //- li
+        li
           a(href="#editor-level-patches", data-toggle="tab")#patches-tab
             span(data-i18n="resources.patches").spr Patches
             - var patches = level.get('patches')
             if patches && patches.length
               span.badge= patches.length
-        //- li
+        li
           a(href="#related-achievements-view", data-toggle="tab", data-i18n="user.achievements_title") Achievements
-        //- li
+        li
           a(href="#editor-level-documentation", data-toggle="tab", data-i18n="editor.level_tab_docs") Documentation
-        //- li
+        li
           a(href="#level-feedback-view", data-toggle="tab")
             .glyphicon.glyphicon-star
+      .navbar-header
+        span.navbar-brand
+          | #{level.attributes.name}
+          span#completion-rate.spl
 
       ul.nav.navbar-nav.navbar-right
-        li#thangs-container-toggle
-          a
-            span.glyphicon-th-list.glyphicon
-        li#thangs-palette-toggle
-          a
-            span.glyphicon-plus.glyphicon
-        //- li#undo-button
+        li#undo-button
           a
             span.glyphicon-arrow-left.glyphicon
-        //- li#redo-button
+        li#redo-button
             a
               span.glyphicon-arrow-right.glyphicon
-        //- li#artisan-guide-button
+        li#artisan-guide-button
           a
             span.glyphicon-book.glyphicon
         if authorized
           li#commit-level-start-button
             a
               span.glyphicon-floppy-disk.glyphicon
-        //- else
+        else
           li#level-patch-button
             a
               span.glyphicon-floppy-disk.glyphicon
@@ -93,8 +86,8 @@ block header
           a(data-toggle='dropdown')
             span.glyphicon-chevron-down.glyphicon
           ul.dropdown-menu
-            //- li.dropdown-header(data-i18n="common.actions") Actions
-            //- li
+            li.dropdown-header(data-i18n="common.actions") Actions
+            li
               a#level-watch-button
                 span.watch
                   span.glyphicon.glyphicon-eye-open
@@ -104,9 +97,8 @@ block header
                   span.spl(data-i18n="common.unwatch") Unwatch
 
             li(class=anonymous ? "disabled": "")
-              //- a(data-i18n="common.fork")#fork-start-button Fork
-              a#fork-start-button Create new level from this level
-            //- if me.isAdmin() || me.isArtisan()
+              a(data-i18n="common.fork")#fork-start-button Fork
+            if me.isAdmin() || me.isArtisan()
               // DNT
               li
                 a#save-branch Save/Stash Branch
@@ -115,32 +107,32 @@ block header
             li(class=anonymous ? "disabled": "")
               a(data-toggle="coco-modal", data-target="modal/RevertModal", data-i18n="editor.revert", disabled=anonymous)#revert-button Revert
             li(class=anonymous ? "disabled": "")
-              a(data-toggle="coco-modal", data-target="editor/level/modals/GenerateTerrainModal", data-i18n="editor.generate_terrain", disabled=anonymous).generate-terrain-button Generate Terrain
-            //- li(class=anonymous ? "disabled": "")
+              a(data-toggle="coco-modal", data-target="editor2/level/modals/GenerateTerrainModal", data-i18n="editor.generate_terrain", disabled=anonymous).generate-terrain-button Generate Terrain
+            li(class=anonymous ? "disabled": "")
               a(data-i18n="editor.pop_i18n")#pop-level-i18n-button Populate i18n
-            //- if view.courseID
+            if view.courseID
               li(class=anonymous ? "disabled": "")
                 a.play-classroom-level(data-classroom='classroom', data-code-language="javascript") Play Classroom JavaScript
               li(class=anonymous ? "disabled": "")
                 a.play-classroom-level(data-classroom='classroom', data-code-language="python") Play Classroom Python
               li(class=anonymous ? "disabled": "")
                 a.play-classroom-level(data-classroom='home', data-code-language="") Play Home
-            //- if me.isAdmin()
+            if me.isAdmin()
               li
-                a(href="/editor/verifier/#{level.get('slug')}?dev=true") Verifier
-            //- li.divider
-            //- li.dropdown-header(data-i18n="common.info") Info
-            //- li#level-history-button
+                a(href="oldeditor/verifier/#{level.get('slug')}?dev=true") Verifier
+            li.divider
+            li.dropdown-header(data-i18n="common.info") Info
+            li#level-history-button
               a(href='#', data-i18n="general.version_history") Version History
-            //- li.divider
-            //- li.dropdown-header(data-i18n="common.help") Help
-            //- li
+            li.divider
+            li.dropdown-header(data-i18n="common.help") Help
+            li
               a(href='https://github.com/codecombat/codecombat/wiki/Artisan-Home', data-i18n="editor.wiki", target="_blank") Wiki
-            //- li
+            li
               a(href='https://coco-slack-invite.herokuapp.com/', data-i18n="editor.live_chat", target="_blank") Live Chat
-            //- li
+            li
               a(href='http://discourse.codecombat.com/category/artisan', data-i18n="nav.forum", target="_blank") Forum
-            //- if !me.isStudent()
+            if !me.isStudent()
               li
                 a.contact-modal(data-i18n="nav.contact")
 

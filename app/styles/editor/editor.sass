@@ -40,11 +40,11 @@
     cursor: pointer
     &:hover
       color: #ffffff
-      background-color: lighten($NAVBG, 10%)
+      background: lighten($NAVBG, 10%)
   .navbar
     min-height: 0px
     border-radius: 0
-    background-color: $NAVBG
+    background: $NAVBG
   .navbar-right
     // not sure why bootstrap puts a big negative margin in, but this overrides it
     margin-right: 10px !important
@@ -100,8 +100,10 @@
     
     .active > a, .active > a:hover, .active > a:focus
       background-color: $BG !important
-      color: darken($BG, 50%) !important
-      border-color: darken($BG, 50%)
+      color: white !important
+      border-color: white
+      // color: darken($BG, 50%) !important
+      // border-color: darken($BG, 50%)
       border-bottom: 0
     a
       padding: 7px 5px !important
