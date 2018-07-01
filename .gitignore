@@ -117,5 +117,9 @@ scripts/analytics/mongodb/.mainAuth.json
 
 # Build info file served by the production server
 .build_info.json
+<<<<<<< HEAD
 id_rsa.pub
 id_rsa.txt
+=======
+package-lock.json
+>>>>>>> de1b5a2c0a7cf79ba58f19dc9d9cf29b3eb7ee99
