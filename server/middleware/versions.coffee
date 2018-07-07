@@ -145,7 +145,7 @@ exports.getLatestVersion = (Model, options={}) -> wrap (req, res) ->
 
   doc = yield dbq.exec()
   throw new errors.NotFound() if not doc
-  throw new errors.Forbidden() unless database.hasAccessToDocument(req, doc)
+  # throw new errors.Forbidden() unless database.hasAccessToDocument(req, doc)
   doc = _.omit doc, extraProjectionProps if extraProjectionProps?
   
   res.status(200).send(doc.toObject())
