@@ -1,4 +1,5 @@
 // TODO: Reconcile env variables for this; maybe WEBPACK_ENV = travis/production/undefined
+require('dotenv').config();
 if (process.env.COCO_TRAVIS_TEST){
   console.log("Automatically using Karma webpack config");
   module.exports = require('./webpack.karma.config')
