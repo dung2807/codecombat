@@ -26,6 +26,9 @@
           li(class= path.indexOf('/teachers/resources') === 0 && path.indexOf('/teachers/resources/faq') !== 0 ? 'active' : '')
             a(href='/teachers/resources')
               small.label(data-i18n='teacher.resource_hub')
+          li(class= path.indexOf('/demo') === 0 && path.indexOf('/demo') !== 0 ? 'active' : '')
+            a(href='/demo')
+              small.label ModuleEditor
           li(class= path.indexOf('/teachers/resources/faq') === 0 ? 'active' : '')
             - var faqURL = "/teachers/resources/faq";
             - if (me.get('preferredLanguage') == 'nl-NL' || me.get('preferredLanguage') == 'nl-BE')

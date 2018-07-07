@@ -25,14 +25,14 @@ block content
             td
               h3(id="#{campaign.id}-#{level.id}")
                 span= level.slug
-                a.spl.small(href="/editor/level/#{level.slug}") (Edit)
+                a.spl.small(href="/demo/level/#{level.slug}") (Edit)
           tr
             td
               if level.hints && level.hints.length > 0
                 each hint in level.hints
                   div
                     span #{hint.name || '(unnamed hint)'}
-                    a.spl.small(href="/editor/level/#{level.slug}") (Edit)
+                    a.spl.small(href="/demo/level/#{level.slug}") (Edit)
                   .hints-table !{marked(hint.body)}
                   br
               else

@@ -246,6 +246,7 @@ module.exports = class World
 
   loadFromLevel: (level, willSimulate=true) ->
     @levelID = level.slug
+    @levelRaster = level.raster
     @levelComponents = level.levelComponents
     @thangTypes = level.thangTypes
     @loadScriptsFromLevel level

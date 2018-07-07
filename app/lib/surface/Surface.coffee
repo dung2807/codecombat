@@ -89,6 +89,7 @@ module.exports = Surface = class Surface extends CocoClass
 
   constructor: (@world, @normalCanvas, @webGLCanvas, givenOptions) ->
     super()
+    console.log @world
     $(window).on('keydown', @onKeyEvent)
     $(window).on('keyup', @onKeyEvent)
     @normalLayers = []
@@ -114,6 +115,24 @@ module.exports = Surface = class Surface extends CocoClass
     @camera = new Camera(@webGLCanvas, { @gameUIState, @handleEvents })
     AudioPlayer.camera = @camera unless @options.choosing
 
+    # unless thangType.rasterImage
+    #   console.error("Cannot render the LayerAdapter SpriteSheet until the raster image for <#{thangType.get('name')}> is loaded.")
+
+    # # hack for IE9, otherwise width/height are not set
+    # $img = $(thangType.rasterImage[0])
+    # $('body').append($img)
+
+    # bm = new createjs.Bitmap(thangType.rasterImage[0])
+    # scale = thangType.get('scale') or 1
+    # frame = spriteSheetBuilder.addFrame(bm, null, scale)
+    # spriteSheetBuilder.addAnimation(@renderGroupingKey(thangType), [frame], false)
+    # $img.remove()
+
+    # if @world.levelRaster
+    #   image = new createjs.Bitmap('/file/'+@world.levelRaster)
+    #   @normalStage.addChild (image)
+
+    # console.log @normalStage
     @normalLayers.push @surfaceTextLayer = new Layer name: 'Surface Text', layerPriority: 1, transform: Layer.TRANSFORM_SURFACE_TEXT, camera: @camera
     @normalLayers.push @gridLayer = new Layer name: 'Grid', layerPriority: 2, transform: Layer.TRANSFORM_SURFACE, camera: @camera
     @normalLayers.push @screenLayer = new Layer name: 'Screen', layerPriority: 3, transform: Layer.TRANSFORM_SCREEN, camera: @camera

@@ -2,7 +2,7 @@
   .button.close(type="button", aria-hidden="true") &times;
   h1
     span.spr= level.get('name')
-    a(href="/editor/level/#{level.get('slug')}", target="_blank") (edit)
+    a(href="/demo/level/#{level.get('slug')}", target="_blank") (edit)
   p= level.get('description')
 
   if analytics.startDay && analytics.endDay

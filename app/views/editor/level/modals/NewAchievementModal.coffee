@@ -17,7 +17,7 @@ module.exports = class NewAchievementModal extends NewModelModal
 
   onAchievementSubmitted: (e) ->
     slug = _.string.slugify @$el.find('#name').val()
-    url = "/editor/achievement/#{slug}"
+    url = "/demo/achievement/#{slug}"
     window.open url, '_blank'
 
   createQuery: ->

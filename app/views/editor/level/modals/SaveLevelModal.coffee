@@ -113,7 +113,7 @@ module.exports = class SaveLevelModal extends SaveVersionModal
           oldModel = _.find @supermodel.models, (m) -> m.get('original') is newModel.get('original')
           oldModel.clearBackup()  # Otherwise looking at old versions is confusing.
           unless modelsToSave.length
-            url = "/editor/level/#{@level.get('slug') or @level.id}"
+            url = "/demo/level/#{@level.get('slug') or @level.id}"
             document.location.href = url
             @hide()  # This will destroy everything, so do it last
 

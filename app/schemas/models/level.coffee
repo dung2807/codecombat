@@ -227,6 +227,8 @@ LevelSchema = c.object {
 }
 c.extendNamedProperties LevelSchema  # let's have the name be the first property
 _.extend LevelSchema.properties,
+  raster: {type: 'string', format: 'image-file', title: 'Raster Image'}
+  rasterIcon: { type: 'string', format: 'image-file', title: 'Raster Image Icon' }
   description: {title: 'Description', description: 'A short explanation of what this level is about.', type: 'string', maxLength: 65536, format: 'markdown'}
   studentPlayInstructions: {title: 'Student Play Instructions', description: 'Instructions for game dev levels when students play them.', type: 'string', maxLength: 65536, format: 'markdown'}
   loadingTip: { type: 'string', title: 'Loading Tip', description: 'What to show for this level while it\'s loading.' }

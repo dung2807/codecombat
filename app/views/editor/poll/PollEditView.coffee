@@ -95,7 +95,7 @@ module.exports = class PollEditView extends RootView
       console.error response
 
     res.success =>
-      url = "/editor/poll/#{@poll.get('slug') or @poll.id}"
+      url = "/demo/poll/#{@poll.get('slug') or @poll.id}"
       document.location.href = url
 
   confirmDeletion: ->

@@ -60,5 +60,5 @@ module.exports = class CourseEditView extends RootView
       console.error response
 
     res.success =>
-      url = "/editor/course/#{@course.get('slug') or @course.id}"
+      url = "/demo/course/#{@course.get('slug') or @course.id}"
       document.location.href = url

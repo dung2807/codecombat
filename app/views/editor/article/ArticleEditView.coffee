@@ -104,7 +104,7 @@ module.exports = class ArticleEditView extends RootView
     res.success =>
       @article.clearBackup()
       modal.modal('hide')
-      url = "/editor/article/#{@article.get('slug') or @article.id}"
+      url = "/demo/article/#{@article.get('slug') or @article.id}"
       document.location.href = url
 
   showVersionHistory: (e) ->

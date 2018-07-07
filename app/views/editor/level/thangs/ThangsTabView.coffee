@@ -96,6 +96,7 @@ module.exports = class ThangsTabView extends CocoView
         @supermodel.registerModel(component)
     )
     @level = options.level
+    console.log 'Level', @level 
     @onThangsChanged = _.debounce(@onThangsChanged)
 
     $(document).bind 'contextmenu', @preventDefaultContextMenu

@@ -136,7 +136,7 @@ module.exports = class ControlBarView extends CocoView
     else
       @homeLink = '/'
       @homeViewClass = 'views/HomeView'
-    c.editorLink = "/editor/level/#{@level.get('slug') or @level.id}"
+    c.editorLink = "/demo/level/#{@level.get('slug') or @level.id}"
     c.homeLink = @homeLink
     c
 

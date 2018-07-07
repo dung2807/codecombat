@@ -128,6 +128,8 @@ LevelSchema.statics.editableProperties = [
   'practiceThresholdMinutes'
   'primerLanguage'
   'studentPlayInstructions'
+  'raster'
+  'rasterIcon'
 ]
 
 

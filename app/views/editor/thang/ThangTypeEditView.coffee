@@ -497,7 +497,7 @@ module.exports = class ThangTypeEditView extends RootView
       @disableModalInProgress(modal)
 
     res.success =>
-      url = "/editor/thang/#{newThangType.get('slug') or newThangType.id}"
+      url = "/demo/thang/#{newThangType.get('slug') or newThangType.id}"
       portraitSource = null
       if @thangType.get('raster')
         #image = @currentLank.sprite.image  # Doesn't work?

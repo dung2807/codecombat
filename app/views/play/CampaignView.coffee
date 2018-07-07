@@ -768,10 +768,10 @@ module.exports = class CampaignView extends RootView
     return experienceScore
 
   createLines: ->
-    for level in @campaign?.renderedLevels ? []
-      for nextLevelOriginal in level.nextLevels ? []
-        if nextLevel = _.find(@campaign.renderedLevels, original: nextLevelOriginal)
-          @createLine level.position, nextLevel.position
+    # for level in @campaign?.renderedLevels ? []
+    #   for nextLevelOriginal in level.nextLevels ? []
+    #     if nextLevel = _.find(@campaign.renderedLevels, original: nextLevelOriginal)
+    #       @createLine level.position, nextLevel.position
 
   createLine: (o1, o2) ->
     mapHeight = parseFloat($(".map").css("height"))

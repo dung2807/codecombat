@@ -20,6 +20,6 @@
               td(style="width: 20px")
                 img.achievement-icon-small(src=achievement.getImageURL() alt="#{achievement.get('name') icon")
               td
-                a(href="/editor/achievement/#{achievement.get('slug')}")= achievement.get('name', true)
+                a(href="/demo/achievement/#{achievement.get('slug')}")= achievement.get('name', true)
               td= achievement.get('description', true)
               td= achievement.get('worth', true)
