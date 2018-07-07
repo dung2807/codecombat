@@ -563,7 +563,8 @@ module.exports = class TeacherClassView extends RootView
         .value()
       totalSpotsAvailable = _.reduce(prepaid.openSpots() for prepaid in availablePrepaids, (val, total) -> val + total) or 0
 
-      canAssignCourses = totalSpotsAvailable >= _.size(unenrolledStudents)
+      canAssignCourses = true
+      # canAssignCourses = totalSpotsAvailable >= _.size(unenrolledStudents)
       if not canAssignCourses
         # These ones just matter for display
         availableFullLicenses = @prepaids.filter((prepaid) -> prepaid.status() is 'available' and prepaid.get('type') is 'course')
